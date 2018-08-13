@@ -10,10 +10,15 @@ public class Block : MonoBehaviour
 
     private void Start()
     {
+        CountBreakableBlocks();
+    }
+
+    private void CountBreakableBlocks()
+    {
+        level = FindObjectOfType<Level>();
         if (tag == "Breakable")
         {
-            level = FindObjectOfType<Level>();
-            level.CountBreakableBlocks();
+            level.CountBlocks();
         }
     }
 
